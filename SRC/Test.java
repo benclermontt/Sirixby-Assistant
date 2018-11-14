@@ -5,8 +5,8 @@
  * Network Programming Final Project
  *
  * Dylan Goldrick
- * Ben
- * Max
+ * Ben Clermont
+ * Max Rioux
  *
  * Just doing basic inputs rn -DG
  *
