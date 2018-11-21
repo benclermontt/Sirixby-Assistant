@@ -53,14 +53,13 @@ public class Test {
         String searchTerm = userInput.nextLine();
         System.out.println("Please enter the number of results. Example: 5 10 20");
         int num = userInput.nextInt();
-        userInput.close();
 
         String searchURL = GOOGLE_SEARCH_URL + "?q="+searchTerm+"&num="+num;
         //without proper User-Agent, we will get 403 error
         Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
 
         //below will print HTML data, save it to a file and open in browser to compare
-        //System.out.println(doc.html());
+        System.out.println(doc.html());
 
         //If google search results HTML change the <h3 class="r" to <h3 class="r1"
         //we need to change below accordingly
@@ -71,8 +70,11 @@ public class Test {
             String linkText = result.text();
             System.out.println("Text::" + linkText + ", URL::" + linkHref.substring(6, linkHref.indexOf("&")));
         }
-    }
 
+        System.out.println("Which option looks the best to you: ");
+        int choice = userInput.nextInt();
+
+    }
 }
 
 
