@@ -26,15 +26,13 @@ public class Test {
             //Fancy looking welcome message
 
         Scanner userInput = new Scanner(System.in);
-            System.out.print(" __  __              ___       ___                          ______                                       \n" +
-                    "/\\ \\/\\ \\            /\\_ \\     /\\_ \\                        /\\__  _\\                                      \n" +
-                    "\\ \\ \\_\\ \\      __   \\//\\ \\    \\//\\ \\      ___              \\/_/\\ \\/                  __       ___ ___    \n" +
-                    " \\ \\  _  \\   /'__`\\   \\ \\ \\     \\ \\ \\    / __`\\               \\ \\ \\                /'__`\\   /' __` __`\\  \n" +
-                    "  \\ \\ \\ \\ \\ /\\  __/    \\_\\ \\_    \\_\\ \\_ /\\ \\L\\ \\               \\_\\ \\__            /\\ \\L\\.\\_ /\\ \\/\\ \\/\\ \\ \n" +
-                    "   \\ \\_\\ \\_\\\\ \\____\\   /\\____\\   /\\____\\\\ \\____/               /\\_____\\           \\ \\__/.\\_\\\\ \\_\\ \\_\\ \\_\\\n" +
-                    "    \\/_/\\/_/ \\/____/   \\/____/   \\/____/ \\/___/                \\/_____/            \\/__/\\/_/ \\/_/\\/_/\\/_/\n" +
-                    "                                                                                                         \n" +
-                    "                                                                                                         ");
+            System.out.print(" " +
+                    " __      __       .__                               \n" +
+                    "/  \\    /  \\ ____ |  |   ____  ____   _____   ____  \n" +
+                    "\\   \\/\\/   // __ \\|  | _/ ___\\/  _ \\ /     \\_/ __ \\ \n" +
+                    " \\        /\\  ___/|  |_\\  \\__(  <_> )  Y Y  \\  ___/ \n" +
+                    "  \\__/\\  /  \\___  >____/\\___  >____/|__|_|  /\\___  >\n" +
+                    "       \\/       \\/          \\/            \\/     \\/");
             System.out.println("  ____    _          _          _             \n" +
                     " / ___|  (_)  _ __  (_) __  __ | |__    _   _ \n" +
                     " \\___ \\  | | | '__| | | \\ \\/ / | '_ \\  | | | |\n" +
@@ -59,7 +57,7 @@ public class Test {
         Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
 
         //below will print HTML data, save it to a file and open in browser to compare
-        System.out.println(doc.html());
+        //System.out.println(doc.html());
 
         //If google search results HTML change the <h3 class="r" to <h3 class="r1"
         //we need to change below accordingly
@@ -71,7 +69,9 @@ public class Test {
             System.out.println("Text::" + linkText + ", URL::" + linkHref.substring(6, linkHref.indexOf("&")));
         }
 
-        System.out.println("Which option looks the best to you: ");
+        //We should try and have the user pick an option and then we should try and scrape the text off
+        //of their choice and print it out for them
+        System.out.println("Which option would you like read out: ");
         int choice = userInput.nextInt();
 
     }
