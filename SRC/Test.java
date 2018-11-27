@@ -26,25 +26,31 @@ public class Test {
             //Fancy looking welcome message
 
         Scanner userInput = new Scanner(System.in);
-            System.out.print(" " +
+        System.out.print(" " +
                     " __      __       .__                               \n" +
                     "/  \\    /  \\ ____ |  |   ____  ____   _____   ____  \n" +
                     "\\   \\/\\/   // __ \\|  | _/ ___\\/  _ \\ /     \\_/ __ \\ \n" +
                     " \\        /\\  ___/|  |_\\  \\__(  <_> )  Y Y  \\  ___/ \n" +
                     "  \\__/\\  /  \\___  >____/\\___  >____/|__|_|  /\\___  >\n" +
                     "       \\/       \\/          \\/            \\/     \\/");
-            System.out.println("  ____    _          _          _             \n" +
+        System.out.println("  ____    _          _          _             \n" +
                     " / ___|  (_)  _ __  (_) __  __ | |__    _   _ \n" +
                     " \\___ \\  | | | '__| | | \\ \\/ / | '_ \\  | | | |\n" +
                     "  ___) | | | | |    | |  >  <  | |_) | | |_| |\n" +
                     " |____/  |_| |_|    |_| /_/\\_\\ |_.__/   \\__, |\n" +
                     "                                        |___/ ");
 
-            //Gathers name from user. Username variable will be used in addressing user in any responses gathered
-            System.out.print("What is your name? ");
-            String username = userInput.nextLine();
+        //Gathers name from user. Username variable will be used in addressing user in any responses gathered
+        System.out.print("What is your name? ");
+        String username = userInput.nextLine();
 
-            System.out.println("Welcome " + username + ". I am Sirixby. How may I help you? ");
+        User user1 = new User(username);
+        if(user1.returnUser())
+            System.out.println("Welcome back " + username + ", how may I assist you today?");
+        else
+            System.out.println("Hello " + username + "! I am Sirixby, how may I assist you today?");
+
+
                  
             //Taking search term input from console
         System.out.println("Please enter the search term.");
