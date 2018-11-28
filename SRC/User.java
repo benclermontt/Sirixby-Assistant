@@ -1,3 +1,10 @@
+/**
+   Sirixby
+   @author Ben Clermont
+ * @author Max Rioux
+ *
+ */
+
 import java.io.*;
 import java.util.Scanner;
 

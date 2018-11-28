@@ -52,41 +52,37 @@ public class Test {
 
 
                  
-            //Taking search term input from console
-             System.out.println("Please enter the search term.");
-             String searchTerm = userInput.nextLine();
+        //Taking search term input from console
+        System.out.println("Please enter the search term.");
+        String searchTerm = userInput.nextLine();
 
-             String searchURL = GOOGLE_SEARCH_URL + "?q="+searchTerm+"&num="+10;
+        String searchURL = GOOGLE_SEARCH_URL + "?q="+searchTerm+"&num="+10;
         //without proper User-Agent, we will get 403 error
-            Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
+        Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
 
-            String[] webText = new String[10];
-            String[] webHref = new String[10];
+        String[] webText = new String[10];
+        String[] webHref = new String[10];
 
         //If google search results HTML change the <h3 class="r" to <h3 class="r1"
         //we need to change below accordingly
-            Elements results = doc.select("h3.r > a");
-            int count = 0;
-            for (Element result : results) {
-                String linkHref = result.attr("href");
-                webHref[count] = result.attr("href");
-                String linkText = result.text();
-                webText[count] = result.text();
-                count++;
-             }
-            for(int i = 0 ; i<5; i++){
-                System.out.println(webText[i] + " " + webHref[i]);
-            }
+        Elements results = doc.select("h3.r > a");
+        int count = 0;
+        for (Element result : results) {
+            String linkHref = result.attr("href");
+            webHref[count] = result.attr("href");
+            String linkText = result.text();
+            webText[count] = result.text();
+            count++;
+        }
+        for(int i = 0 ; i<5; i++){
+            System.out.println(webText[i] + " " + webHref[i]);
+        }
 
 
         //We should try and have the user pick an option and then we should try and scrape the text off
         //of their choice and print it out for them
-            System.out.println("Which option would you like read out: ");
-            int choice = userInput.nextInt();
+        System.out.println("Which option would you like read out: ");
+        int choice = userInput.nextInt();
 
     }
 }
-
-
-
-
