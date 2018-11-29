@@ -60,13 +60,13 @@ public class Test {
         //without proper User-Agent, we will get 403 error
         Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
 
-        String[] webText = new String[10];
-        String[] webHref = new String[10];
+        String[] webText = new String[11];
+        String[] webHref = new String[11];
 
         //If google search results HTML change the <h3 class="r" to <h3 class="r1"
         //we need to change below accordingly
         Elements results = doc.select("h3.r > a");
-        int count = 0;
+        int count = 1;
         String needle = "/url?q=";
         int needleSize = needle.length();
 
@@ -79,12 +79,11 @@ public class Test {
             webText[count] = result.text();
             count++;
         }
-        for(int i = 0 ; i<5; i++){
+        for(int i = 1 ; i<=5; i++){
             System.out.println(webText[i] + " " + webHref[i]);
         }
 
-        //We should try and have the user pick an option and then we should try and scrape the text off
-        //of their choice and print it out for them
+        //The User chooses an option and then the website is scraped
         System.out.println("Which option would you like read out: ");
         int choice = userInput.nextInt();
 
