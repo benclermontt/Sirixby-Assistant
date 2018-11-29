@@ -6,7 +6,11 @@ import java.util.Scanner;
 public class Websites {
     public String[] url;
     public Websites(String[] url) {
-        this.url = url;
+
+        for(int i =0; i < url.length; i++) {
+            String[] newString = url[i].split("/");
+            this.url[i] = newString[0];
+        }
     }
 
     public String[][] top5Sites() throws IOException {
