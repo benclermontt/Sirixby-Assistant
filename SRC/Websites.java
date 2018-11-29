@@ -23,7 +23,9 @@ public class Websites {
             int local = fileUrls.indexOf(url[i]);
 
             if(local == -1) {
-                fileUrls.add(fileScores[i]);
+                fileScores[i][0] = url[i];
+                fileScores[i][1] = "";
+                fileScores[i][2] = "5";
                 continue;
             }
 
