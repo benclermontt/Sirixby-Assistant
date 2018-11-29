@@ -84,5 +84,8 @@ public class Test {
         System.out.println("Which option would you like read out: ");
         int choice = userInput.nextInt();
 
+        String html = Jsoup.connect(webHref[choice]).get().html();
+        System.out.println(html);
+
     }
 }
