@@ -67,9 +67,14 @@ public class Test {
         //we need to change below accordingly
         Elements results = doc.select("h3.r > a");
         int count = 0;
+        String needle = "/url?q=";
+        int needleSize = needle.length();
+
         for (Element result : results) {
             String linkHref = result.attr("href");
-            webHref[count] = result.attr("href");
+            linkHref = linkHref.startsWith(needle) ? linkHref.substring(needleSize): linkHref;
+            String newlinkHref = linkHref.split("&")[0];
+            webHref[count] = newlinkHref;
             String linkText = result.text();
             webText[count] = result.text();
             count++;
@@ -77,7 +82,6 @@ public class Test {
         for(int i = 0 ; i<5; i++){
             System.out.println(webText[i] + " " + webHref[i]);
         }
-
 
         //We should try and have the user pick an option and then we should try and scrape the text off
         //of their choice and print it out for them
