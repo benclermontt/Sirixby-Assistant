@@ -18,8 +18,21 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class Test {
+public class Test extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("SirixbyUI"));
+        primaryStage.setTitle("Sirixby");
+        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.show();
+    }
     public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
     public static void main(String[] args) throws IOException {
 
