@@ -24,9 +24,10 @@ public class User {
             }
         }
 
-        FileWriter write = new FileWriter("Users.txt");
+        Writer write;
+        write = new BufferedWriter(new FileWriter("Users.txt", true));
 
-        write.write(name);
+        write.append("\n" + name);
         write.close();
         return false;
     }
