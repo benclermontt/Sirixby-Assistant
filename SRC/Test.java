@@ -12,6 +12,10 @@
  *
  */
 
+import java.awt.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Scanner;
 import java.io.IOException;
 import org.jsoup.Jsoup;
@@ -87,8 +91,17 @@ public class Test {
         System.out.println("Which option would you like read out: ");
         int choice = userInput.nextInt();
 
-        String html = Jsoup.connect(webHref[choice]).get().html();
-        System.out.println(html);
+
+        try{
+            Desktop desktop = java.awt.Desktop.getDesktop();
+            URI choiceURI = new URI(webHref[choice]);
+            desktop.browse(choiceURI);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
 
     }
+
 }
