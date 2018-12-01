@@ -1,40 +1,43 @@
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Websites {
     public String[] url;
-    public Websites(String[] url) {
+    ArrayList<String[]> fileUrls = new ArrayList<>();
+
+    public Websites(String[] url) throws IOException{
 
         for(int i =0; i < url.length; i++) {
             String[] newString = url[i].split("/");
             this.url[i] = newString[0];
         }
-    }
 
-    public String[][] top5Sites() throws IOException {
         Scanner file = new Scanner(new File("Websites.txt"));
-
-        ArrayList<String[]> fileUrls = new ArrayList<>();
-        String[][] fileScores = new String[10][3];
-
         while(file.hasNextLine()) {
             fileUrls.add((file.nextLine().split(" ")));
         }
+    }
+
+    public String[][] top5Sites() throws IOException {
+        String[][] fileScores = new String[10][3];
+
 
         for(int i = 0; i<url.length; i++) {
             int local = -1;
             for(int z = 0; z<fileUrls.size(); z++) {
                 String current = fileUrls.get(z)[0];
-                if(current.equals(url)) local = z;
+                if(current.equals(url[0])) local = z;
             }
 
             if(local == -1) {
                 fileScores[i][0] = url[i];
                 fileScores[i][1] = "5";
                 fileScores[i][2] = "5";
-                continue;
+                addToFile(fileScores[i]);
+                local = fileUrls.size();
             }
 
 
@@ -66,6 +69,7 @@ public class Websites {
 
             if(!found) {
                 newFileScores.add(fileScores[i]);
+                // add method to add new url to sheet
             }
         }
 
@@ -81,13 +85,6 @@ public class Websites {
         String[] newUrl = url.split("/");
         int index = -1;
 
-        Scanner file = new Scanner(new File("Websites.txt"));
-        ArrayList<String[]> fileUrls = new ArrayList<>();
-
-        while(file.hasNextLine()) {
-            fileUrls.add((file.nextLine().split(" ")));
-        }
-
         for(int i = 0; i< fileUrls.size(); i++) {
             if(url.equals(fileUrls.get(i)[0])) {
                 index = i;
@@ -95,11 +92,14 @@ public class Websites {
             }
         }
 
+        String[] current = fileUrls.get(index);
+
         if(index != -1) {
-            String[] current = fileUrls.get(index);
             current[1] = current[1] + "," + Integer.toString(score);
             current[2] = Integer.toString(calcAvg(current[1]));
         }
+
+        addToFile(current, index);
 
         return true;
     }
@@ -113,5 +113,49 @@ public class Websites {
         }
 
         return sum/nums.length;
+    }
+
+    private void addToFile(String[] current, int index) throws IOException {
+        Writer write;
+        write = new BufferedWriter(new FileWriter("Websites.txt", true));
+
+
+        fileUrls.set(index, current);
+
+        for(int i = 0; i < fileUrls.size(); i++) {
+            if(i == 0) {
+                write.write(fileUrls.get(i)[0] + " ");
+                write.append(fileUrls.get(i)[1] + " ");
+                write.append(fileUrls.get(i)[2] + "/n");
+            }
+            else {
+                write.append(fileUrls.get(i)[0] + " ");
+                write.append(fileUrls.get(i)[1] + " ");
+                write.append(fileUrls.get(i)[2] + "/n");
+            }
+        }
+        write.close();
+    }
+
+    private void addToFile(String[] current) throws IOException {
+        Writer write;
+        write = new BufferedWriter(new FileWriter("Websites.txt", true));
+
+
+        fileUrls.add(current);
+
+        for(int i = 0; i < fileUrls.size(); i++) {
+            if(i == 0) {
+                write.write(fileUrls.get(i)[0] + " ");
+                write.append(fileUrls.get(i)[1] + " ");
+                write.append(fileUrls.get(i)[2] + "/n");
+            }
+            else {
+                write.append(fileUrls.get(i)[0] + " ");
+                write.append(fileUrls.get(i)[1] + " ");
+                write.append(fileUrls.get(i)[2] + "/n");
+            }
+        }
+        write.close();
     }
 }
