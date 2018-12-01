@@ -28,15 +28,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Test extends Application {
+public class Test {
 
-    @Override
+    /*@Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("SirixbyUI"));
         primaryStage.setTitle("Sirixby");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
+    */
     public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
     public static void main(String[] args) throws IOException {
 
@@ -96,8 +97,16 @@ public class Test extends Application {
             webText[count] = result.text();
             count++;
         }
+
+        Websites list = new Websites(webHref);
+
+        System.out.println(list.toString());
+
+
+        String[] tops = list.top5Sites();
+
         for(int i = 1 ; i<=5; i++){
-            System.out.println(webText[i] + " " + webHref[i]);
+            System.out.println(tops[i]);
         }
 
         //The User chooses an option and then the website is scraped
@@ -105,16 +114,20 @@ public class Test extends Application {
         int choice = userInput.nextInt();
 
 
+        URI choiceURI = null;
+
         try{
             Desktop desktop = java.awt.Desktop.getDesktop();
-            URI choiceURI = new URI(webHref[choice]);
+            choiceURI = new URI(tops[choice]);
             desktop.browse(choiceURI);
         }catch (Exception e){
             e.printStackTrace();
         }
 
+        System.out.print("How would you rate your experience on " + choiceURI.toString() + " out of 10? ");
+        int score = userInput.nextInt();
 
-
+        list.addScore(score, tops[choice]);
     }
 
 }
