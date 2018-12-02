@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+Max
+=======
 
 Steve
 Michele
+>>>>>>> origin/master
+
+Cabbage
+ben
+b
+cabbafge
+Michael
+a
+Cabbgae
+baggage
