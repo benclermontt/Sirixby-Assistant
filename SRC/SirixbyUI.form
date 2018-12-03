@@ -19,7 +19,7 @@
           <component id="dbe76" class="javax.swing.JButton" binding="button1" default-binding="true">
             <constraints border-constraint="East"/>
             <properties>
-              <text value="Button"/>
+              <text value="Enter"/>
             </properties>
           </component>
         </children>
@@ -28,7 +28,7 @@
         <constraints border-constraint="North"/>
         <properties>
           <font name="Lucida Sans Typewriter"/>
-          <text value="                                              Sirixby Personal Assistant"/>
+          <text value="                                              "/>
         </properties>
       </component>
       <component id="d86f5" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">

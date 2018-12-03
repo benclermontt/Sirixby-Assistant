@@ -9,12 +9,15 @@ public class SirixbyUI extends JFrame implements ActionListener {
     public JButton button1;
     public JTextArea textArea1;
     private String word2;
-    public static boolean s1 = false;
+    public JTextArea sirixbyPersonalAssistantTextArea;
 
+    public static boolean s1 = false;
     public SirixbyUI(){
         add(rootPanel);
         setTitle("Sirixby Personal Assistant");
         setSize(400,500);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 
     }
