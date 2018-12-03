@@ -41,11 +41,11 @@ public class SirixbyUI extends JFrame implements ActionListener {
 
         while(!s1) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(100);
             }
             catch (InterruptedException e){
                 String yes = textField1.getText();
-                textField1.setText("");
+                textField1.setText(" ");
                 return yes;
             }
         }
@@ -57,4 +57,7 @@ public class SirixbyUI extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
     }
-}
+
+
+    }
+

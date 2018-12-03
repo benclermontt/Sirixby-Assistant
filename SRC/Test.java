@@ -41,6 +41,10 @@ public class Test {
         sirixbyUI.setVisible(true);
 
         Scanner userInput = new Scanner(System.in);
+
+
+
+
         sirixbyUI.updateTextArea(" " +
                     " __      __       .__                               \n" +
                     "/  \\    /  \\ ____ |  |   ____  ____   _____   ____  \n" +
@@ -69,6 +73,8 @@ public class Test {
         String answer = "no";
 
         do {
+
+
 
 
             //Taking search term input from console
@@ -115,7 +121,9 @@ public class Test {
             }
 
             //The User chooses an option and then the website is scraped
-            System.out.println("Which option would you like read out: ");
+            System.out.print("\nWhich option would you like to open? ");
+            sirixbyUI.updateTextArea("Which option would you like to open? ");
+
             int choice = userInput.nextInt();
             int local;
 
@@ -135,6 +143,7 @@ public class Test {
             }
 
             System.out.print("How would you rate your experience on " + tops[choice] + " out of 10? ");
+            sirixbyUI.updateTextArea("How would you rate your experience on " + tops[choice] + " out of 10? ");
             int score = userInput.nextInt();
 
             list.addScore(score, tops[choice]);
@@ -143,7 +152,9 @@ public class Test {
             userInput.nextLine();
 
             System.out.print("Would you like to make another search (yes or no): ");
+            sirixbyUI.updateTextArea("Would you like to make another search? (yes or no)\n");
             answer = userInput.nextLine();
+
         }
         while(answer.equalsIgnoreCase("yes"));
     }
