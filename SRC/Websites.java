@@ -128,6 +128,8 @@ public class Websites {
         String[] newUrl = url.split("/");
         int index = -1;
 
+        updateUrls();
+
         for(int i = 0; i< fileUrls.size(); i++) {
             if(url.equals(fileUrls.get(i)[0])) {
                 index = i;
@@ -174,6 +176,7 @@ public class Websites {
         Writer write;
         write = new BufferedWriter(new FileWriter("Websites.txt", true));
 
+
         clearTextFile();
 
         fileUrls.set(index, current);
@@ -196,6 +199,8 @@ public class Websites {
     private void addToFile(String[] current) throws IOException {
         Writer write;
         write = new BufferedWriter(new FileWriter("Websites.txt", true));
+
+        updateUrls();
 
         clearTextFile();
 
@@ -229,5 +234,20 @@ public class Websites {
         PrintWriter writer = new PrintWriter("Websites.txt");
         writer.print("");
         writer.close();
+    }
+
+    private void updateUrls() throws IOException{
+        Scanner file = new Scanner(new File("Websites.txt"));
+        while (file.hasNextLine()) {
+            String[] current = file.nextLine().split(" ");
+            boolean found = false;
+            for(String[] s : fileUrls) {
+                if(current[0].equals(s[0])) found = true;
+            }
+
+            if(!found) {
+                fileUrls.add(current);
+            }
+        }
     }
 }

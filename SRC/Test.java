@@ -118,7 +118,7 @@ public class Test {
         //The User chooses an option and then the website is scraped
         System.out.println("Which option would you like read out: ");
         int choice = userInput.nextInt();
-
+        int local;
 
         URI choiceURI = null;
 
@@ -127,7 +127,7 @@ public class Test {
             for(int i = 1; i < webHref.length; i++) {
                 if (webHref[i].contains(tops[choice])) {
                     choiceURI = new URI(webHref[i]);
-
+                    local = i;
                 }
             }
             desktop.browse(choiceURI);
@@ -135,7 +135,7 @@ public class Test {
             e.printStackTrace();
         }
 
-        System.out.print("How would you rate your experience on " + choiceURI.toString() + " out of 10? ");
+        System.out.print("How would you rate your experience on " + tops[choice] + " out of 10? ");
         int score = userInput.nextInt();
 
         list.addScore(score, tops[choice]);
