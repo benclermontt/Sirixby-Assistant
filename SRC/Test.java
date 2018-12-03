@@ -57,14 +57,14 @@ public class Test {
                     "                                        |___/ ");
 
         //Gathers name from user. Username variable will be used in addressing user in any responses gathered
-        sirixbyUI.updateTextArea("What is your name? ");
+        sirixbyUI.updateTextArea("What is your name? \n");
         String username = sirixbyUI.readInput();
 
         User user1 = new User(username);
         if(user1.returnUser())
-            sirixbyUI.updateTextArea("Welcome back " + username + ", how may I assist you today?");
+            sirixbyUI.updateTextArea("Welcome back " + username + ", how may I assist you today?\n");
         else
-            sirixbyUI.updateTextArea("Hello " + username + "! I am Sirixby, how may I assist you today?");
+            sirixbyUI.updateTextArea("Hello " + username + "! I am Sirixby, how may I assist you today?\n");
 
         String answer = "no";
 
@@ -72,7 +72,7 @@ public class Test {
 
 
             //Taking search term input from console
-            sirixbyUI.updateTextArea("Please enter the search term.");
+            sirixbyUI.updateTextArea("Please enter the search term: \n");
             String searchTerm = sirixbyUI.readInput();
 
             String searchURL = GOOGLE_SEARCH_URL + "?q=" + searchTerm + "&num=" + 18;
@@ -111,6 +111,7 @@ public class Test {
 
             for (int i = 1; i <= 5; i++) {
                 System.out.println(tops[i]);
+                sirixbyUI.updateTextArea(tops[i]);
             }
 
             //The User chooses an option and then the website is scraped

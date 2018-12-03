@@ -14,7 +14,13 @@
         <children>
           <component id="4d9da" class="javax.swing.JTextField" binding="textField1" default-binding="true">
             <constraints border-constraint="Center"/>
-            <properties/>
+            <properties>
+              <focusable value="true"/>
+              <name value=""/>
+              <text value=""/>
+              <toolTipText value=""/>
+              <verifyInputWhenFocusTarget value="true"/>
+            </properties>
           </component>
           <component id="dbe76" class="javax.swing.JButton" binding="button1" default-binding="true">
             <constraints border-constraint="East"/>
