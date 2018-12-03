@@ -32,11 +32,11 @@ public class Test {
     public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
     public static void main(String[] args) throws IOException {
 
-            SirixbyUI sirixbyUI = new SirixbyUI();
-            sirixbyUI.setVisible(true);
+        SirixbyUI sirixbyUI = new SirixbyUI();
+        sirixbyUI.setVisible(true);
 
         Scanner userInput = new Scanner(System.in);
-        System.out.print(" " +
+        sirixbyUI.updateTextArea(" " +
                     " __      __       .__                               \n" +
                     "/  \\    /  \\ ____ |  |   ____  ____   _____   ____  \n" +
                     "\\   \\/\\/   // __ \\|  | _/ ___\\/  _ \\ /     \\_/ __ \\ \n" +
@@ -44,7 +44,7 @@ public class Test {
                     "  \\__/\\  /  \\___  >____/\\___  >____/|__|_|  /\\___  >\n" +
                     "       \\/       \\/          \\/            \\/     \\/\n");
 
-        System.out.println("  ____    _          _          _             \n" +
+        sirixbyUI.updateTextArea("  ____    _          _          _             \n" +
                     " / ___|  (_)  _ __  (_) __  __ | |__    _   _ \n" +
                     " \\___ \\  | | | '__| | | \\ \\/ / | '_ \\  | | | |\n" +
                     "  ___) | | | | |    | |  >  <  | |_) | | |_| |\n" +
@@ -52,7 +52,7 @@ public class Test {
                     "                                        |___/ ");
 
         //Gathers name from user. Username variable will be used in addressing user in any responses gathered
-        System.out.print("What is your name? ");
+        sirixbyUI.updateTextArea("What is your name? ");
         String username = userInput.nextLine();
 
         User user1 = new User(username);
