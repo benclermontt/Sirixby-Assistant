@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="SirixbyUI">
   <grid id="27dc6" binding="rootPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="722" height="633"/>
+      <xy x="20" y="20" width="533" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -24,10 +24,16 @@
           </component>
         </children>
       </grid>
+      <component id="95334" class="javax.swing.JTextArea" binding="sirixbyPersonalAssistantTextArea" default-binding="true">
+        <constraints border-constraint="North"/>
+        <properties>
+          <font name="Lucida Sans Typewriter"/>
+          <text value="                                              Sirixby Personal Assistant"/>
+        </properties>
+      </component>
       <component id="d86f5" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
         <constraints border-constraint="Center"/>
         <properties>
-          <editable value="false"/>
           <font name="Lucida Sans Typewriter"/>
         </properties>
       </component>
