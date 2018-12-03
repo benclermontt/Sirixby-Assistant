@@ -86,11 +86,17 @@ public class Test {
         Elements results = doc.select("h3.r > a");
         int count = 1;
         String needle = "/url?q=";
+        String imageNeedle = "/search?q=";
         int needleSize = needle.length();
 
         for (Element result : results) {
             String linkHref = result.attr("href");
-            linkHref = linkHref.startsWith(needle) ? linkHref.substring(needleSize): linkHref;
+            if(linkHref.startsWith(needle) == true) {
+                linkHref = linkHref.startsWith(needle) ? linkHref.substring(needleSize) : linkHref;
+            } else {
+                count = count - 1;
+                continue;
+            }
             String newlinkHref = linkHref.split("&")[0];
             webHref[count] = newlinkHref;
             String linkText = result.text();
