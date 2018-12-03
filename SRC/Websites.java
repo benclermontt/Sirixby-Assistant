@@ -42,7 +42,7 @@ public class Websites {
      * @return String[]
      * @throws IOException
      */
-    public String[] top5Sites() throws IOException {
+    public String[]top5Sites() throws IOException {
         String[][] fileScores = new String[url.length][3];
 
 

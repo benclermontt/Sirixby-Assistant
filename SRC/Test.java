@@ -94,7 +94,6 @@ public class Test {
             if(linkHref.startsWith(needle) == true) {
                 linkHref = linkHref.startsWith(needle) ? linkHref.substring(needleSize) : linkHref;
             } else {
-                count = count - 1;
                 continue;
             }
             String newlinkHref = linkHref.split("&")[0];
@@ -109,7 +108,8 @@ public class Test {
         System.out.println(list.toString());
 
 
-        String[] tops = list.top5Sites();
+        String[] tops = new String[10];
+        tops = list.top5Sites();
 
         for(int i = 1 ; i<=5; i++){
             System.out.println(tops[i]);

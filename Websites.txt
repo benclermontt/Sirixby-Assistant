@@ -1,10 +1,3 @@
-www.what-dog.net 5 5
-www.medicalnewstoday.com 5 5
-www.whfoods.com 5 5
-www.nutrition-and-you.com 5 5
-www.allrecipes.com 5 5
-www.facebook.com 5,1 3
-www.metalblade.com 5 5
 www.youtube.com 5 5
 open.spotify.com 5 5
 www.metal-archives.com 5,8 6
@@ -36,3 +29,16 @@ edismemberment.bandcamp.com 5 5
 genius.com 5 5
 aminoapps.com 5 5
 vk.com 5 5
+www.medicalnewstoday.com 5 5
+www.thekitchn.com 5 5
+www.foodnetwork.com 5,9 7
+www.whfoods.com 5 5
+www.nutrition-and-you.com 5 5
+whatmollymade.com 5 5
+www.cookingclassy.com 5 5
+www.allrecipes.com 5 5
+lmld.org 5 5
+bakingamoment.com 5 5
+www.tasteofhome.com 5 5
+www.foodandwine.com 5 5
+null 5 5
