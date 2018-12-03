@@ -74,7 +74,7 @@ public class Test {
         System.out.println("Please enter the search term.");
         String searchTerm = userInput.nextLine();
 
-        String searchURL = GOOGLE_SEARCH_URL + "?q="+searchTerm+"&num="+10;
+        String searchURL = GOOGLE_SEARCH_URL + "?q="+searchTerm+"&num="+18;
         //without proper User-Agent, we will get 403 error
         Document doc = Jsoup.connect(searchURL).userAgent("Mozilla/5.0").get();
 
@@ -100,6 +100,9 @@ public class Test {
             webHref[count] = newlinkHref;
             String linkText = result.text();
             webText[count] = result.text();
+            if(webHref[10] != null) {
+                break;
+            }
             count++;
         }
 

@@ -1,8 +1,10 @@
-www.foodnetwork.com 5 5
+www.livewellbakeoften.com 5,7 6
+en.wikipedia.org 5,10 7
+www.yelp.com 5 7
+joyfoodsunshine.com 5 5
+www.washingtonpost.com 5 4
+www.bettycrocker.com 5 3
+www.bhg.com 5 2
+iambaker.net 5 5
+topshelfcookies.com 5 5
 www.allrecipes.com 5 5
-lmld.org 5 5
-bakingamoment.com 5 5
-en.wikipedia.org 5 5
-www.tasteofhome.com 5 5
-www.foodandwine.com 5 5
-whatmollymade.com 5 5

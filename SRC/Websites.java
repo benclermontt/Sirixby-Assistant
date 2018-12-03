@@ -46,7 +46,7 @@ public class Websites {
         String[][] fileScores = new String[url.length][3];
 
 
-        for(int i = 1; i<url.length; i++) {
+        for(int i = 0; i<url.length; i++) {
             int local = -1;
             for(int z = 0; z<fileUrls.size(); z++) {
                 String current = fileUrls.get(z)[0];
@@ -63,15 +63,23 @@ public class Websites {
                 String[] current = fileUrls.get(local);
                 fileScores[i] = current;
             }
-
         }
 
-        fileScores = sortScores(fileScores);
+        ArrayList<String[]> sortedFileScores = sortScores(fileScores);
 
+
+        /*
         String[] output = new String[10];
 
         for(int i =0; i < fileScores.length; i++) {
             output[i] = fileScores[i][0];
+        }
+        */
+
+        String[] output = new String[sortedFileScores.size()];
+
+        for(int i = 0; i < output.length; i++) {
+            output[i] = sortedFileScores.get(i)[0];
         }
 
         return output;
@@ -84,10 +92,10 @@ public class Websites {
      * @param fileScores
      * @return String[][]
      */
-    private String[][] sortScores(String[][] fileScores) {
+    private ArrayList<String[]> sortScores(String[][] fileScores) {
         ArrayList<String[]> newFileScores = new ArrayList<>();
-        for(int i = 1; i < fileScores.length; i++)  {
-            if(i == 1) {
+        for(int i = 0; i < fileScores.length; i++)  {
+            if(i == 0) {
                 newFileScores.add(fileScores[i]);
                 continue;
             }
@@ -99,7 +107,7 @@ public class Websites {
                 if(Integer.parseInt(fileScores[i][2]) > Integer.parseInt(currentScore[2])) {
                     newFileScores.add(z, fileScores[i]);
                     found = true;
-                    continue;
+                    break;
                 }
             }
 
@@ -109,12 +117,14 @@ public class Websites {
             }
         }
 
+        /*
         String[][] output = new String[newFileScores.size()][3];
         for(int i = 0; i < newFileScores.size(); i++) {
             output[i] = newFileScores.get(i);
         }
+        */
 
-        return output;
+        return newFileScores;
     }
 
     /**
@@ -176,6 +186,7 @@ public class Websites {
         Writer write;
         write = new BufferedWriter(new FileWriter("Websites.txt", true));
 
+        updateUrls();
 
         clearTextFile();
 
