@@ -15,7 +15,7 @@ public class SirixbyUI extends JFrame {
     public SirixbyUI(){
         add(rootPanel);
         setTitle("Sirixby Personal Assistant");
-        setSize(400,500);
+        setSize(800,600);
     }
 
     public void updateTextArea(String text) {

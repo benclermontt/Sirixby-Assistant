@@ -67,7 +67,7 @@ public class Test {
 
 
             //Taking search term input from console
-            System.out.println("Please enter the search term.");
+            System.out.println("Please enter the search term: ");
             String searchTerm = userInput.nextLine();
 
             String searchURL = GOOGLE_SEARCH_URL + "?q=" + searchTerm + "&num=" + 18;
@@ -109,7 +109,7 @@ public class Test {
             }
 
             //The User chooses an option and then the website is scraped
-            System.out.println("Which option would you like read out: ");
+            System.out.println("Which option would you like read out? ");
             int choice = userInput.nextInt();
             int local;
 

@@ -19,7 +19,9 @@
           <component id="dbe76" class="javax.swing.JButton" binding="button1" default-binding="true">
             <constraints border-constraint="East"/>
             <properties>
-              <text value="Button"/>
+              <actionCommand value="Button"/>
+              <label value="Enter"/>
+              <text value="Enter"/>
             </properties>
           </component>
         </children>
@@ -27,13 +29,15 @@
       <component id="95334" class="javax.swing.JTextArea" binding="sirixbyPersonalAssistantTextArea" default-binding="true">
         <constraints border-constraint="North"/>
         <properties>
+          <editable value="false"/>
           <font name="Lucida Sans Typewriter"/>
-          <text value="                                              Sirixby Personal Assistant"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="d86f5" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
         <constraints border-constraint="Center"/>
         <properties>
+          <editable value="false"/>
           <font name="Lucida Sans Typewriter"/>
         </properties>
       </component>
