@@ -144,6 +144,7 @@ public class Test {
             sirixbyUI.updateTextArea("Would you like to make another search (yes or no): ");
             answer = sirixbyUI.getInput();
             sirixbyUI.answer = "";
+            sirixbyUI.textArea1.setText("");
         }
         while(answer.equalsIgnoreCase("yes"));
     }

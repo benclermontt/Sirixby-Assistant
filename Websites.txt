@@ -1,6 +1,3 @@
-www.streetdrugs.org 5 5
-edlatimore.com 5 5
-www.drugfreeworld.org 5,10 7
 www.independent.co.uk 5 5
 www.quora.com 5 5
 newrepublic.com 5 5
@@ -43,7 +40,7 @@ www.foodnetwork.com 5 5
 extension.illinois.edu 5 5
 www.urbandictionary.com 5 5
 jojo.wikia.com 5,8 6
-www.amazon.com 5,10 7
+www.amazon.com 5,10,5 6
 shirtoid.com 5 5
 anime.stackexchange.com 5 5
 gfycat.com 5 5
@@ -82,7 +79,7 @@ www.bensollee.com 5 5
 www.vetstreet.com 5 5
 www.petfinder.com 5 5
 mashable.com 5 5
-animals.howstuffworks.com 5 5
+animals.howstuffworks.com 5,10 7
 www.huffingtonpost.com 5 5
 www.webmd.com 5 5
 www.walmart.com 5 5
@@ -98,3 +95,19 @@ web.yesnetwork.com 5 5
 www.merriam-webster.com 5 5
 www.allmusic.com 5 5
 www.yesmagazine.org 5 5
+www.psychologytoday.com 5 5
+www.ascd.org 5 5
+www.huffpost.com 5 5
+help.blackboard.com 5 5
+www.aartrijk.com 5 5
+www.lifehack.org 5 5
+songmeanings.com 5 5
+giphy.com 5 5
+myactivity.google.com 5 5
+myaccount.google.com 5 5
+accounts.google.com 5 5
+policies.google.com 5 5
+www.google.com 5,8 6
+support.google.com 5 5
+www.alphr.com 5 5
+www.pbs.org 5 5
