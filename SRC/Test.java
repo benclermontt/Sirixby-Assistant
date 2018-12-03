@@ -32,7 +32,8 @@ public class Test {
     public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
     public static void main(String[] args) throws IOException {
 
-            //Fancy looking welcome message
+            SirixbyUI sirixbyUI = new SirixbyUI();
+            sirixbyUI.setVisible(true);
 
         Scanner userInput = new Scanner(System.in);
         System.out.print(" " +
@@ -41,7 +42,8 @@ public class Test {
                     "\\   \\/\\/   // __ \\|  | _/ ___\\/  _ \\ /     \\_/ __ \\ \n" +
                     " \\        /\\  ___/|  |_\\  \\__(  <_> )  Y Y  \\  ___/ \n" +
                     "  \\__/\\  /  \\___  >____/\\___  >____/|__|_|  /\\___  >\n" +
-                    "       \\/       \\/          \\/            \\/     \\/");
+                    "       \\/       \\/          \\/            \\/     \\/\n");
+
         System.out.println("  ____    _          _          _             \n" +
                     " / ___|  (_)  _ __  (_) __  __ | |__    _   _ \n" +
                     " \\___ \\  | | | '__| | | \\ \\/ / | '_ \\  | | | |\n" +
