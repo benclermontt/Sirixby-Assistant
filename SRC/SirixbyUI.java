@@ -46,6 +46,7 @@ public class SirixbyUI extends JFrame implements ActionListener {
                 return yes;
             }
         }
+
         return textField1.getText();
 
     }
