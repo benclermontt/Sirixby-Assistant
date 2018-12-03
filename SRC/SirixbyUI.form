@@ -27,6 +27,7 @@
       <component id="95334" class="javax.swing.JTextArea" binding="sirixbyPersonalAssistantTextArea" default-binding="true">
         <constraints border-constraint="North"/>
         <properties>
+          <editable value="false"/>
           <font name="Lucida Sans Typewriter"/>
           <text value="                                              "/>
         </properties>
@@ -34,6 +35,7 @@
       <component id="d86f5" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
         <constraints border-constraint="Center"/>
         <properties>
+          <editable value="false"/>
           <font name="Lucida Sans Typewriter"/>
         </properties>
       </component>
