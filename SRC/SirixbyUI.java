@@ -17,6 +17,8 @@ public class SirixbyUI extends JFrame implements ActionListener {
         setTitle("Sirixby Personal Assistant");
         setSize(400,500);
 
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         button1.addActionListener(new ActionListener() {
 

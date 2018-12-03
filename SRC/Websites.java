@@ -23,9 +23,7 @@ public class Websites {
         // Checks if null + splits string at / to remove search specific parts of link
         for (int i = 1, z = 0; i < url.length; i++) {
             try {
-                if(url[i] == null) {
-                    continue;
-                }
+                if(url[i] == null) {}
                 else {
                     String[] newString = url[i].split("/");
                     this.url[z] = newString[2];
@@ -125,7 +123,7 @@ public class Websites {
      * @return
      * @throws IOException
      */
-    public boolean addScore(int score, String url) throws IOException{
+    public void addScore(int score, String url) throws IOException{
         String[] newUrl = url.split("/");
         int index = -1;
 
@@ -146,8 +144,6 @@ public class Websites {
         }
 
         addToFile(current, index);
-
-        return true;
     }
 
     /**

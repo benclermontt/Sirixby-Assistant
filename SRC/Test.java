@@ -40,9 +40,6 @@ public class Test {
     public static void main(String[] args) throws IOException {
 
         sirixbyUI.setVisible(true);
-        String response = sirixbyUI.answer;
-
-        Scanner userInput = new Scanner(System.in);
         sirixbyUI.updateTextArea(" " +
                     " __      __       .__                               \n" +
                     "/  \\    /  \\ ____ |  |   ____  ____   _____   ____  \n" +
@@ -95,7 +92,7 @@ public class Test {
 
             for (Element result : results) {
                 String linkHref = result.attr("href");
-                if (linkHref.startsWith(needle) == true) {
+                if (linkHref.startsWith(needle)) {
                     linkHref = linkHref.startsWith(needle) ? linkHref.substring(needleSize) : linkHref;
                 } else {
                     continue;
@@ -146,6 +143,7 @@ public class Test {
 
             sirixbyUI.updateTextArea("Would you like to make another search (yes or no): ");
             answer = sirixbyUI.getInput();
+            sirixbyUI.answer = "";
         }
         while(answer.equalsIgnoreCase("yes"));
     }
