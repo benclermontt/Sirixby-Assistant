@@ -9,7 +9,8 @@ public class SirixbyUI extends JFrame implements ActionListener {
     public JButton button1;
     public JTextArea textArea1;
     private String word2;
-    public static boolean s1 = false;
+    public static volatile boolean s1 = false;
+    public String answer = "";
 
     public SirixbyUI(){
         add(rootPanel);
@@ -17,41 +18,35 @@ public class SirixbyUI extends JFrame implements ActionListener {
         setSize(400,500);
 
 
+        button1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                // Set word2 with the input string from the textfiel
+                answer = textField1.getText();
+                textField1.setText("");
+            }
+        });
+
     }
 
     public void updateTextArea(String text) {
         textArea1.append("\n" + text);
     }
 
-    public String readInput() {
-
-
-        button1.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                // Set word2 with the input string from the textfiel
-                SirixbyUI.s1 = true;
-
-            }
-        });
-
-        while(!s1) {
-            try {
-                Thread.sleep(1000);
-            }
-            catch (InterruptedException e){
-                String yes = textField1.getText();
-                textField1.setText("");
-                return yes;
-            }
-        }
-
-        return textField1.getText();
+    public void actionPerformed(ActionEvent e) {
 
     }
 
-    public void actionPerformed(ActionEvent e) {
+    public String getInput() {
+        while(answer.equalsIgnoreCase("") || answer == null) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                return answer;
+            }
+        }
 
+        return answer;
     }
 }

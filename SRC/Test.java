@@ -35,10 +35,12 @@ import javax.swing.*;
 public class Test {
     public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
     public Boolean s1 = false;
+    static SirixbyUI sirixbyUI = new SirixbyUI();
 
     public static void main(String[] args) throws IOException {
-        SirixbyUI sirixbyUI = new SirixbyUI();
+
         sirixbyUI.setVisible(true);
+        String response = sirixbyUI.answer;
 
         Scanner userInput = new Scanner(System.in);
         sirixbyUI.updateTextArea(" " +
@@ -58,7 +60,8 @@ public class Test {
 
         //Gathers name from user. Username variable will be used in addressing user in any responses gathered
         sirixbyUI.updateTextArea("What is your name? ");
-        String username = sirixbyUI.readInput();
+        String username = sirixbyUI.getInput();
+        sirixbyUI.answer = "";
 
         User user1 = new User(username);
         if(user1.returnUser())
@@ -73,7 +76,8 @@ public class Test {
 
             //Taking search term input from console
             sirixbyUI.updateTextArea("Please enter the search term.");
-            String searchTerm = sirixbyUI.readInput();
+            String searchTerm = sirixbyUI.getInput();
+            sirixbyUI.answer = "";
 
             String searchURL = GOOGLE_SEARCH_URL + "?q=" + searchTerm + "&num=" + 18;
             //without proper User-Agent, we will get 403 error
@@ -110,12 +114,13 @@ public class Test {
             String[] tops = list.top5Sites();
 
             for (int i = 1; i <= 5; i++) {
-                System.out.println(tops[i]);
+                sirixbyUI.updateTextArea(tops[i]);
             }
 
             //The User chooses an option and then the website is scraped
-            System.out.println("Which option would you like read out: ");
-            int choice = userInput.nextInt();
+            sirixbyUI.updateTextArea("Which option would you like read out: ");
+            int choice = Integer.parseInt(sirixbyUI.getInput());
+            sirixbyUI.answer = "";
             int local;
 
             URI choiceURI = null;
@@ -133,19 +138,15 @@ public class Test {
                 e.printStackTrace();
             }
 
-            System.out.print("How would you rate your experience on " + tops[choice] + " out of 10? ");
-            int score = userInput.nextInt();
+            sirixbyUI.updateTextArea("How would you rate your experience on " + tops[choice] + " out of 10? ");
+            int score = Integer.parseInt(sirixbyUI.getInput());
+            sirixbyUI.answer = "";
 
             list.addScore(score, tops[choice]);
 
-            System.out.println();
-            userInput.nextLine();
-
-            System.out.print("Would you like to make another search (yes or no): ");
-            answer = userInput.nextLine();
+            sirixbyUI.updateTextArea("Would you like to make another search (yes or no): ");
+            answer = sirixbyUI.getInput();
         }
         while(answer.equalsIgnoreCase("yes"));
     }
-
-
 }

@@ -24,13 +24,6 @@
           </component>
         </children>
       </grid>
-      <component id="95334" class="javax.swing.JTextArea" binding="sirixbyPersonalAssistantTextArea" default-binding="true">
-        <constraints border-constraint="North"/>
-        <properties>
-          <font name="Lucida Sans Typewriter"/>
-          <text value="                                              Sirixby Personal Assistant"/>
-        </properties>
-      </component>
       <component id="d86f5" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
         <constraints border-constraint="Center"/>
         <properties>
