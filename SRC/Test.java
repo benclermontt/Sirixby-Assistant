@@ -13,6 +13,8 @@
  */
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -28,10 +30,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+
 public class Test {
     public static final String GOOGLE_SEARCH_URL = "https://www.google.com/search";
-    public static void main(String[] args) throws IOException {
+    public Boolean s1 = false;
 
+    public static void main(String[] args) throws IOException {
         SirixbyUI sirixbyUI = new SirixbyUI();
         sirixbyUI.setVisible(true);
 
@@ -53,13 +58,13 @@ public class Test {
 
         //Gathers name from user. Username variable will be used in addressing user in any responses gathered
         sirixbyUI.updateTextArea("What is your name? ");
-        String username = userInput.nextLine();
+        String username = sirixbyUI.readInput();
 
         User user1 = new User(username);
         if(user1.returnUser())
-            System.out.println("Welcome back " + username + ", how may I assist you today?");
+            sirixbyUI.updateTextArea("Welcome back " + username + ", how may I assist you today?");
         else
-            System.out.println("Hello " + username + "! I am Sirixby, how may I assist you today?");
+            sirixbyUI.updateTextArea("Hello " + username + "! I am Sirixby, how may I assist you today?");
 
         String answer = "no";
 
@@ -67,8 +72,8 @@ public class Test {
 
 
             //Taking search term input from console
-            System.out.println("Please enter the search term.");
-            String searchTerm = userInput.nextLine();
+            sirixbyUI.updateTextArea("Please enter the search term.");
+            String searchTerm = sirixbyUI.readInput();
 
             String searchURL = GOOGLE_SEARCH_URL + "?q=" + searchTerm + "&num=" + 18;
             //without proper User-Agent, we will get 403 error
@@ -141,5 +146,6 @@ public class Test {
         }
         while(answer.equalsIgnoreCase("yes"));
     }
+
 
 }

@@ -1,9 +1,3 @@
-www.boston.gov 5 5
-www.yourtango.com 5,1 3
-www.focusonthefamily.com 5 5
-www.bostoncatholic.org 5 5
-www.merriam-webster.com 5 5
-www.dictionary.com 5 5
 southpark.cc.com 5 5
 en.wikipedia.org 5,10,10,10 8
 www.imdb.com 5 5
@@ -46,7 +40,7 @@ newsroom.fb.com 5 5
 www.apple.com 5,1,1 2
 foursquare.com 5 5
 www.bizjournals.com 5,1,1 2
-www.youtube.com 5 5
+www.youtube.com 5,2 3
 netbeans.org 5,10 7
 docs.oracle.com 5 5
 www.ntu.edu.sg 5 5
@@ -72,3 +66,18 @@ www.crazydiamond.ch 5 5
 www.facebook.com 5 5
 www.crunchyroll.com 5 5
 myanimelist.net 5 5
+bimpactassessment.net 5 5
+twitter.com 5 5
+bcorporation.net 5 5
+bcorporation.eu 5 5
+techterms.com 5 5
+en.oxforddictionaries.com 5 5
+www.vocabulary.com 5 5
+www.w3schools.com 5 5
+dictionary.cambridge.org 5 5
+finance.yahoo.com 5 5
+www.benjerry.com 5 5
+ben.productplacement.com 5 5
+www.benrectormusic.com 5 5
+null 5 5
+www.benharper.com 5 5
