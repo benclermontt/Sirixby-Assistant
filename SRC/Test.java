@@ -124,7 +124,12 @@ public class Test {
 
         try{
             Desktop desktop = java.awt.Desktop.getDesktop();
-            choiceURI = new URI(tops[choice]);
+            for(int i = 1; i < webHref.length; i++) {
+                if (webHref[i].contains(tops[choice])) {
+                    choiceURI = new URI(webHref[i]);
+
+                }
+            }
             desktop.browse(choiceURI);
         }catch (Exception e){
             e.printStackTrace();

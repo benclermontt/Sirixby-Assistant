@@ -13,7 +13,7 @@ public class Websites {
         // Checks if null + splits string at / to remove search specific parts of link
         for (int i = 1, z = 0; i < url.length; i++) {
             try {
-                if(url[i].equals("null")) {
+                if(url[i] == null) {
                     continue;
                 }
                 else {
