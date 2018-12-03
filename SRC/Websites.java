@@ -1,3 +1,13 @@
+/**
+ * Websites.java
+ *
+ * This class does the sorting and machine learning aspects of the project
+ *
+ * @author Ben Clermont
+ * @date 2/12/2018
+ */
+
+
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -26,7 +36,6 @@ public class Websites {
                 System.out.println(ex.getMessage());
             }
         }
-
 
         // Adds everything from the file to arrayList
         Scanner file = new Scanner(new File("Websites.txt"));
@@ -66,16 +75,6 @@ public class Websites {
         }
 
         ArrayList<String[]> sortedFileScores = sortScores(fileScores);
-
-
-        /*
-        String[] output = new String[10];
-
-        for(int i =0; i < fileScores.length; i++) {
-            output[i] = fileScores[i][0];
-        }
-        */
-
         String[] output = new String[sortedFileScores.size()];
 
         for(int i = 0; i < output.length; i++) {
@@ -113,23 +112,15 @@ public class Websites {
 
             if(!found) {
                 newFileScores.add(fileScores[i]);
-                // add method to add new url to sheet
             }
         }
-
-        /*
-        String[][] output = new String[newFileScores.size()][3];
-        for(int i = 0; i < newFileScores.size(); i++) {
-            output[i] = newFileScores.get(i);
-        }
-        */
 
         return newFileScores;
     }
 
     /**
      * Updates a score in the database
-     * @param score
+     * @param int score
      * @param url
      * @return
      * @throws IOException
