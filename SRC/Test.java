@@ -56,15 +56,15 @@ public class Test {
                     "                                        |___/ ");
 
         //Gathers name from user. Username variable will be used in addressing user in any responses gathered
-        sirixbyUI.updateTextArea("What is your name? ");
+        sirixbyUI.updateTextArea("What is your name? \n");
         String username = sirixbyUI.getInput();
         sirixbyUI.answer = "";
 
         User user1 = new User(username);
         if(user1.returnUser())
-            sirixbyUI.updateTextArea("Welcome back " + username + ", how may I assist you today?");
+            sirixbyUI.updateTextArea("Welcome back " + username + "\n");
         else
-            sirixbyUI.updateTextArea("Hello " + username + "! I am Sirixby, how may I assist you today?");
+            sirixbyUI.updateTextArea("Hello " + username + "! I am Sirixby\n");
 
         String answer = "no";
 
@@ -72,7 +72,7 @@ public class Test {
 
 
             //Taking search term input from console
-            sirixbyUI.updateTextArea("Please enter the search term.");
+            sirixbyUI.updateTextArea("Please enter the search term:\n");
             String searchTerm = sirixbyUI.getInput();
             sirixbyUI.answer = "";
 
@@ -115,7 +115,7 @@ public class Test {
             }
 
             //The User chooses an option and then the website is scraped
-            sirixbyUI.updateTextArea("Which option would you like read out: ");
+            sirixbyUI.updateTextArea("\n Which website would you like to open? \n");
             int choice = Integer.parseInt(sirixbyUI.getInput());
             sirixbyUI.answer = "";
             int local;
@@ -141,7 +141,7 @@ public class Test {
 
             list.addScore(score, tops[choice]);
 
-            sirixbyUI.updateTextArea("Would you like to make another search (yes or no): ");
+            sirixbyUI.updateTextArea("Would you like to make another search? (yes or no) ");
             answer = sirixbyUI.getInput();
             sirixbyUI.answer = "";
             sirixbyUI.textArea1.setText("");

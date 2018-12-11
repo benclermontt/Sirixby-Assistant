@@ -19,7 +19,8 @@
           <component id="dbe76" class="javax.swing.JButton" binding="button1" default-binding="true">
             <constraints border-constraint="East"/>
             <properties>
-              <text value="Button"/>
+              <enabled value="true"/>
+              <text value="Enter"/>
             </properties>
           </component>
         </children>
@@ -27,6 +28,7 @@
       <component id="d86f5" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
         <constraints border-constraint="Center"/>
         <properties>
+          <editable value="false"/>
           <font name="Lucida Sans Typewriter"/>
         </properties>
       </component>

@@ -15,7 +15,7 @@ public class SirixbyUI extends JFrame implements ActionListener {
     public SirixbyUI(){
         add(rootPanel);
         setTitle("Sirixby Personal Assistant");
-        setSize(400,500);
+        setSize(600,650);
 
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -43,7 +43,7 @@ public class SirixbyUI extends JFrame implements ActionListener {
     public String getInput() {
         while(answer.equalsIgnoreCase("") || answer == null) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 return answer;
             }
